@@ -1,0 +1,65 @@
+@startuml
+class AvailableDate {
+  - long id
+  - LocalDate availableDate
+}
+
+class Doctor {
+  - Long id
+  - String name
+  - String phone
+  - String mail
+  - String address
+  - String city
+  - Set<Appointment> appointments
+  - List<AvailableDate> availableDates
+}
+
+class Customer {
+  - Long id
+  - String name
+  - String phone
+  - String mail
+  - String address
+  - String city
+  - Set<Animal> animalList
+}
+
+class Animal {
+  - long id
+  - String name
+  - String species
+  - String breed
+  - String color
+  - LocalDate dateOfBirth
+  - Customer customer
+  - Set<Vaccine> vaccines
+  - Set<Appointment> appointments
+}
+
+class Appointment {
+  - long id
+  - LocalDate appointmentDate
+  - Animal animal
+  - Doctor doctor
+}
+
+class Vaccine {
+  - Long id
+  - String name
+  - String code
+  - LocalDate protectionStartDate
+  - LocalDate protectionFinishDate
+  - Animal animal
+}
+
+AvailableDate "0..*" -- "0..*" Doctor : has
+Doctor "1" -- "0..*" Appointment : has
+Customer "1" -- "0..*" Animal : has
+Animal "0..*" -- "1" Customer : belongs to
+Animal "0..*" -- "1" Appointment : has
+Animal "0..*" -- "1" Vaccine : has
+Appointment "0..*" -- "1" Doctor : scheduled with
+Appointment "0..*" -- "1" Animal : scheduled for
+Vaccine "0..*" -- "1" Animal : given to
+@enduml

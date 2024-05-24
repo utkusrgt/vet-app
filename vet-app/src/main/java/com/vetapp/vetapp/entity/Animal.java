@@ -37,9 +37,10 @@ public class Animal {
     @Column(name = "date_of_birth", nullable = false)
     private LocalDate dateOfBirth;
 
+
     @ManyToOne
     @JoinColumn(name = "customer_id")
-    private Customer owner;
+    private Customer customer;
 
     @OneToMany(mappedBy = "animal")
     @JsonIgnore

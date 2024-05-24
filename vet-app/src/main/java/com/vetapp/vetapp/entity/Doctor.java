@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -39,13 +40,24 @@ public class Doctor {
     @JsonIgnore
     private Set<Appointment> appointments;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
 
     @JoinTable(
-            name = "doctor_available_dates",
+            name = "available_dates_doctors",
             joinColumns = @JoinColumn(name = "doctor_id"),
             inverseJoinColumns = @JoinColumn(name = "available_date_id")
     )
-    private Set<AvailableDate> availableDates;
+    private List<AvailableDate> availableDates;
+
+    public Doctor(Long id, String name, String phone, String mail, String address, String city,Set<Appointment> appointments) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.mail = mail;
+        this.address = address;
+        this.city = city;
+        this.appointments = appointments;
+
+    }
 
 }

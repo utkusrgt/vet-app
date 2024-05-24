@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -23,7 +25,7 @@ public class AvailableDate {
 
     private LocalDate availableDate;
 
-    @ManyToMany(mappedBy = "availableDates")
+    @ManyToMany
     @JsonIgnore
-    private Set<Doctor> doctors;
+    private List<Doctor> doctors = new ArrayList<>();
 }

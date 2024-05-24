@@ -35,9 +35,9 @@ public class Customer {
     @Column(name = "city", nullable = false)
     private String city;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JsonIgnore
-    private Set<Animal> animals;
+    private Set<Animal> animalList;
 
 
 
