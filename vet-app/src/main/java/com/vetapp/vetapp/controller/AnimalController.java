@@ -1,12 +1,8 @@
 package com.vetapp.vetapp.controller;
 
-import com.vetapp.vetapp.dto.request.CustomerRequest;
-import com.vetapp.vetapp.dto.response.CustomerResponse;
 import com.vetapp.vetapp.entity.Animal;
-import com.vetapp.vetapp.service.AnimalService;
-import lombok.Getter;
+import com.vetapp.vetapp.service.impl.AnimalServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AnimalController {
 
-    private final AnimalService animalService;
+    private final AnimalServiceImpl animalService;
 
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)

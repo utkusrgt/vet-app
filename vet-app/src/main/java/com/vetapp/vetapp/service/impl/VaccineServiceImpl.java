@@ -1,9 +1,8 @@
-package com.vetapp.vetapp.service;
+package com.vetapp.vetapp.service.impl;
 
-import com.vetapp.vetapp.entity.Animal;
 import com.vetapp.vetapp.entity.Vaccine;
-import com.vetapp.vetapp.repository.AnimalRepository;
 import com.vetapp.vetapp.repository.VaccineRepository;
+import com.vetapp.vetapp.service.interfaces.VaccineService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,7 +13,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class VaccineService {
+public class VaccineServiceImpl implements VaccineService {
 
     private final VaccineRepository vaccineRepository;
 
@@ -55,13 +54,6 @@ public class VaccineService {
         vaccine.setId(id);
         return this.vaccineRepository.save(vaccine);
     }
-
-
-
-
-
-
-
 
 
 }

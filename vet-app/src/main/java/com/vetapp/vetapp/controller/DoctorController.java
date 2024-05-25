@@ -2,7 +2,7 @@ package com.vetapp.vetapp.controller;
 
 import com.vetapp.vetapp.dto.request.AddDatesRequest;
 import com.vetapp.vetapp.entity.Doctor;
-import com.vetapp.vetapp.service.DoctorService;
+import com.vetapp.vetapp.service.impl.DoctorServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DoctorController {
 
-    private final DoctorService doctorService;
+    private final DoctorServiceImpl doctorService;
 
 
 

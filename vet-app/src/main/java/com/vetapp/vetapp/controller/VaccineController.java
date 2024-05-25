@@ -1,7 +1,7 @@
 package com.vetapp.vetapp.controller;
 
 import com.vetapp.vetapp.entity.Vaccine;
-import com.vetapp.vetapp.service.VaccineService;
+import com.vetapp.vetapp.service.impl.VaccineServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class VaccineController {
 
-    private final VaccineService vaccineService;
+    private final VaccineServiceImpl vaccineService;
 
     @GetMapping
     public ResponseEntity<List<Vaccine>> findAll() {

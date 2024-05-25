@@ -1,9 +1,8 @@
-package com.vetapp.vetapp.service;
+package com.vetapp.vetapp.service.impl;
 
-import com.vetapp.vetapp.dto.response.CustomerResponse;
 import com.vetapp.vetapp.entity.Animal;
-import com.vetapp.vetapp.entity.Customer;
 import com.vetapp.vetapp.repository.AnimalRepository;
+import com.vetapp.vetapp.service.interfaces.AnimalService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class AnimalService {
+public class AnimalServiceImpl implements AnimalService {
 
     private final AnimalRepository animalRepository;
 

@@ -1,14 +1,13 @@
 package com.vetapp.vetapp.controller;
 
 import com.vetapp.vetapp.entity.Appointment;
-import com.vetapp.vetapp.service.AppointmentService;
+import com.vetapp.vetapp.service.impl.AppointmentServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -16,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AppointmentController {
 
-    private final AppointmentService appointmentService;
+    private final AppointmentServiceImpl appointmentService;
 
     @GetMapping
     public ResponseEntity<List<Appointment>> getAllAppointments() {

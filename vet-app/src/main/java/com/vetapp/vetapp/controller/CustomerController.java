@@ -2,7 +2,7 @@ package com.vetapp.vetapp.controller;
 
 import com.vetapp.vetapp.dto.request.CustomerRequest;
 import com.vetapp.vetapp.dto.response.CustomerResponse;
-import com.vetapp.vetapp.service.CustomerService;
+import com.vetapp.vetapp.service.impl.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +13,10 @@ import java.util.List;
 @RequestMapping("/api/v1/customers")
 public class CustomerController {
 
-    private final CustomerService customerService;
+    private final CustomerServiceImpl customerService;
 
     @Autowired
-    public CustomerController(CustomerService customerService) {
+    public CustomerController(CustomerServiceImpl customerService) {
         this.customerService = customerService;
     }
 

@@ -1,10 +1,9 @@
-package com.vetapp.vetapp.service;
+package com.vetapp.vetapp.service.impl;
 
 
-import com.vetapp.vetapp.entity.Animal;
 import com.vetapp.vetapp.entity.AvailableDate;
 import com.vetapp.vetapp.repository.AvailableDateRepository;
-import jakarta.transaction.Transactional;
+import com.vetapp.vetapp.service.interfaces.AvailableDateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +12,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class AvailableDateService {
+public class AvailableDateServiceImpl implements AvailableDateService {
 
     private final AvailableDateRepository availableDateRepository;
 

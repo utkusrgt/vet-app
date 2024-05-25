@@ -1,15 +1,14 @@
-package com.vetapp.vetapp.service;
+package com.vetapp.vetapp.service.impl;
 
-import com.vetapp.vetapp.entity.Animal;
 import com.vetapp.vetapp.entity.AvailableDate;
 import com.vetapp.vetapp.entity.Doctor;
 import com.vetapp.vetapp.repository.AvailableDateRepository;
 import com.vetapp.vetapp.repository.DoctorRepository;
+import com.vetapp.vetapp.service.interfaces.DoctorService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.print.Doc;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class DoctorService {
+public class DoctorServiceImpl implements DoctorService {
 
     private final DoctorRepository doctorRepository;
     private final AvailableDateRepository availableDateRepository;

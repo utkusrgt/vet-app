@@ -1,10 +1,11 @@
-package com.vetapp.vetapp.service;
+package com.vetapp.vetapp.service.impl;
 
 import com.vetapp.vetapp.dto.request.CustomerRequest;
 import com.vetapp.vetapp.dto.response.CustomerResponse;
 import com.vetapp.vetapp.entity.Customer;
 import com.vetapp.vetapp.mapper.CustomerMapper;
 import com.vetapp.vetapp.repository.CustomerRepository;
+import com.vetapp.vetapp.service.interfaces.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 
-public class CustomerService {
+public class CustomerServiceImpl implements CustomerService{
 
     private final CustomerRepository customerRepository;
     private final CustomerMapper customerMapper;
