@@ -7,15 +7,15 @@
 
 The system allows veterinary staff to handle various tasks such as managing veterinarians, scheduling appointments, and recording animal vaccinations.
 
-Features
+## Features
 
-Veterinarian Management
+## Veterinarian Management
 
 Add, update, view, and delete veterinarian details.
 
 Manage the available days of veterinarians.
 
-Customer and Animal Management
+## Customer and Animal Management
 
 Add, update, view, and delete customer and animal details.
 
@@ -25,29 +25,26 @@ Filter customers by name.
 
 View all animals belonging to a specific customer.
 
-Vaccine Management
+## Vaccine Management
 
 Add, update, view, and delete vaccination records.
 
-Prevent duplicate vaccinations if the protection period of an existing vaccination has not expired.
 
 List all vaccinations for a specific animal.
 
 List animals with vaccinations expiring within a given date range.
 
 
-Appointment Management
+## Appointment Management
 
 Schedule, update, view, and delete appointments.
-
-Ensure no appointment conflicts with a veterinarian's available days and times.
 
 Filter appointments by date range and veterinarian.
 
 Filter appointments by date range and animal.
 
 
-API Endpoints
+## API Endpoints
 
 Animal and Customer Management
 
@@ -92,7 +89,7 @@ Appointments will need Both Date and Time in ISO Date and Time format. In the fi
 @JsonFormat did not work for this.
 
 
-Project Structure
+## Project Structure
 
 Layered Architecture
 
