@@ -20,7 +20,12 @@ public interface AnimalRepository extends JpaRepository<Animal, Long> {
     @Query("SELECT a FROM Animal a WHERE a.customer.name = :customerName")
     List<Animal> findByCustomerName(@Param("customerName") String customerName);
 
-    Optional<Object> findByName(String name);
+    //Optional<Object> findByName(String name);
+
+    List<Animal> findByName(String name);
 
 
+
+    @Query("SELECT a FROM Animal a WHERE a.name = :name AND a.customer.id = :customerId")
+    Animal findByAnimalNameAndCustomerId(@Param("name") String name, @Param("customerId") Long customerId);
 }

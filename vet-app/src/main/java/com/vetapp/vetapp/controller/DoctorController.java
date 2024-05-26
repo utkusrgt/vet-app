@@ -50,13 +50,13 @@ public class DoctorController {
         return ResponseEntity.ok("Doctor with ID " + id + " has been deleted successfully.");
     }
 
-    @PostMapping("/{id}/add-date")
+    /*@PostMapping("/{id}/add-date")
     public ResponseEntity<Doctor> addDate(@PathVariable Long id, @RequestBody Doctor doctor) {
         Doctor updatedDoctor = doctorService.addDate(id, doctor);
         return ResponseEntity.ok(updatedDoctor);
 
 
-    }
+    }*/
 
     @PostMapping("/add-dates")
     public ResponseEntity<Doctor> addDates(@RequestBody AddDatesRequest request) {

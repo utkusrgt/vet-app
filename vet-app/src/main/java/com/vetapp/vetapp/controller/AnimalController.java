@@ -1,9 +1,13 @@
 package com.vetapp.vetapp.controller;
 
+import com.vetapp.vetapp.dto.request.AddAnimalRequest;
+import com.vetapp.vetapp.dto.request.AddDatesRequest;
 import com.vetapp.vetapp.entity.Animal;
+import com.vetapp.vetapp.entity.Doctor;
 import com.vetapp.vetapp.service.impl.AnimalServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +25,7 @@ public class AnimalController {
         return animalService.findAll();
     }
 
+
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Animal getById(@PathVariable("id") Long id) {
@@ -32,11 +37,26 @@ public class AnimalController {
         return animalService.findByCustomerId(customerId);
     }
 
-    @PostMapping()
+    /*@PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public Animal save(@RequestBody Animal animal) {
         return animalService.create(animal);
+    }//çalışan kod*/
+
+    @PostMapping()
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<Animal> save(@RequestBody AddAnimalRequest request) {
+        Animal addedAnimal = animalService.create(
+                request.getCustomerid(),
+                request.getName(),
+                request.getBreed(),
+                request.getSpecies(),
+                request.getColor(),
+                request.getDateOfBirth());
+        return ResponseEntity.ok(addedAnimal);
     }
+
+
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
@@ -50,9 +70,15 @@ public class AnimalController {
         animalService.deleteById(id);
     }
 
-    @GetMapping("/findByAnimalName/{name}")
+    /*@GetMapping("/findByAnimalName/{name}")
     @ResponseStatus(HttpStatus.OK)
     public Animal findByName(@PathVariable("name") String name) {
+        return animalService.findByName(name);
+    }*/
+
+    @GetMapping("/animalsname/{name}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Animal> findByName(@PathVariable String name) {
         return animalService.findByName(name);
     }
 

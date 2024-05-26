@@ -30,7 +30,7 @@ public class Appointment {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime appointmentEndDate;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "animal_id")
     private Animal animal;
 
