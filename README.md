@@ -111,7 +111,6 @@ UML Diagram
 
 
 
-
 This project aims to provide a comprehensive management system for a veterinary clinic, covering all essential operations and ensuring data integrity and consistency.
 
 
@@ -127,7 +126,10 @@ You will need the dependency for the SQL of your choice.
 
 This application works on the LocalHost:8080.
 
-[Swagger UI]([url](http://localhost:8080/swagger-ui/index.html#/)) would be the best option to test.
+[Swagger UI](http://localhost:8080/swagger-ui/index.html#/) would be the best option to test.
+
+
+
 
 
 
